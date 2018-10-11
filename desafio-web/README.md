@@ -1,3 +1,9 @@
+# Docker
+
+docker build -t marcos/desafio-web .
+
+docker run --name desafio-web -p 80:80 marcos/desafio-web
+
 # DesafioWeb
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
