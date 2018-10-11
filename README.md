@@ -27,11 +27,9 @@ OU
 
 cd desafio
 docker build -t marcos/desafio-core .
-docker run --name desafio-core -p 8081:8081 marcos/desafio-core
 
 cd../desafio-web
 docker build -t marcos/desafio-web .
-docker run --name desafio-web -p 80:80 marcos/desafio-web
 
 docker-compose up -d
 
