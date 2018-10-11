@@ -58,6 +58,9 @@ public class LegadoServiceImpl implements LegadoService {
 		response.setTotalElements(total != response.getListaControleLancamento().size() ? 
 				response.getTotalElements() - (total - response.getTotalElements()) : response.getTotalElements());
 		
+		LOGGER.debug("Size: " + (response.getListaControleLancamento() != null ? 
+				response.getListaControleLancamento().size() : "0"));
+		
 		LOGGER.debug("findAccountLaunch - FIM");
 		
 		return response;

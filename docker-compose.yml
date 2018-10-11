@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+
+    desafio-core:
+        container_name: desafio-core
+        image: marcos/desafio-core:latest
+        ports:
+            - "8081:8081"
+        networks:
+            - desafio
+
+    desafio-web:
+        container_name: desafio-web
+        image: marcos/desafio-web:latest
+        ports:
+            - "80:80"
+        networks:
+            - desafio
+        depends_on:
+            - desafio-core
+        
+networks:
+  desafio:
+    driver: bridge

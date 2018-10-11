@@ -17,6 +17,12 @@ Após fazer o download do código, faça o seguinte:
 mvn clean install
 cd target
 java -jar desafio-1.0.0-SNAPSHOT.jar
+
+OU
+
+docker build -t marcos/desafio-core .
+docker run --name desafio-core -p 8081:8081 marcos/desafio-core
+
 ```
 
 ## Teste

@@ -33,12 +33,15 @@ public class AccountServiceImpl implements AccountService {
 	
 	public LaunchResponse find(FilterLegado filter) throws AccountException, LegadoException {
 	
-		LOGGER.debug("findById - INICIO");
+		LOGGER.debug("find - INICIO");
 		
 		LancamentoContaLegado legado = legadoService.findAccountLaunch(filter);
 		LaunchResponse response = orikaMapperFacade.map(legado, LaunchResponse.class);
 		
-		LOGGER.debug("findById - FIM");
+		LOGGER.debug("Size: " + (response.getItems() != null ? 
+				response.getItems().size() : "0"));
+		
+		LOGGER.debug("find - FIM");
 		
 		return response;
 	}
