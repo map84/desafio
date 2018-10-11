@@ -1,0 +1,32 @@
+<p>
+  Status: <input type="text" [(ngModel)]="status"/>
+  Descrição: <input type="text" [(ngModel)]="description" />
+  Número: <input type="text" [(ngModel)]="id" />
+  <br><br>
+  <button class="btn btn-primary" (click)="showItems()">Consultar</button>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Data do lançamento</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Número</th>
+      <th scope="col">Situação</th>
+      <th scope="col">Data de confirmação</th>
+      <th scope="col">Dados bancários</th>
+      <th scope="col">Valor final</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of list.items">
+      <td>{{item.effectiveDate}}</td>
+      <td>{{item.description}}</td>
+      <td>{{item.id}}</td>
+      <td>{{item.status}}</td>
+      <td>{{item.confirmDate}}</td>
+      <td>{{item.bank.name}}, AG: {{item.bank.agency}}, CC: {{item.bank.account}} </td>
+      <td>{{item.amount}}</td>
+    </tr>
+  </tbody>
+</table>
